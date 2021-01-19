@@ -1,0 +1,52 @@
+.button_large{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+.title_center{
+    text-align: center;
+}
+.form-task{
+    width: 80%;
+    margin: 3em auto;
+    padding: 1em 3em;
+    border: 1px solid black;
+    text-align: right;
+}
+
+.row{
+    display: block;
+    text-align: right;
+}
+
+.description{
+    vertical-align: top;
+}
+
+.width_label{
+    width: 10%;
+    margin-right: 10%;
+}
+
+.width_input{
+    width: 70%;
+}
+
+.half_rows{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.half_row{
+    width: 50%;
+    text-align: center;
+}
+
+.half_width_label{
+    width: 40%;
+}
+
+.half_width_input{
+    width: 60%;
+}

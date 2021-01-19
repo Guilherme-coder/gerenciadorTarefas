@@ -1,0 +1,58 @@
+<a href="tarefas/cadastrar"><button type="button" class="btn btn-outline-primary btn-sm btn-block button_large">Cadastrar Tarefa</button></a>
+
+<h4 class="title_center">Listagem de Tarefas</h4>
+
+<section class="list_task">
+    <form [formGroup]="listForm" (submit)="filter()">
+        <div class="row">
+            <label class="width_label" for="number">Número: </label>
+            <input class="width_input" type="number" id="number" formControlName="id">
+        </div>
+
+        <div class="row">
+            <label class="width_label" for="title">Título: </label>
+            <input class="width_input" type="text" id="title" formControlName="title">
+        </div>
+
+        <div class="half_rows">
+            <div class="half_row">
+                <label class="half_width_label" for="responsible">Responsável: </label>
+                <select class="half_width_input" formControlName="responsible" id="responsible" name="responsible">
+                    <option *ngFor="let responsible of responsibles" [value]="responsible">{{ responsible[0].toUpperCase() + responsible.substr(1) }}</option>
+                </select>
+            </div>
+            
+            <div class="half_row">
+                <label class="half_width_label" for="status">Situação: </label>
+                <select class="half_width_input" formControlName="status" id="status" name="statuts">
+                    <option value="progress">Em andamento</option>
+                    <option value="completed">Concluída</option>
+                </select>
+            </div> 
+        </div>
+
+        <button class="btn btn-success btn-sm btn-block button_large" (click)="filter()" type="button">Filtrar</button>
+        <button class="btn btn-primary btn-sm btn-block button_large" (click)="clearFilter()" type="button">Limpar os Filtros</button>
+    </form>
+</section>
+
+<section class="section_table">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Número</th>
+            <th scope="col">Título</th>
+            <th scope="col">Responsável</th>
+            <th scope="col">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let data of datas' class="tr_listed">
+            <td id="id">{{ data.id }}</td>
+            <td id="title">{{ data.title[0].toUpperCase() + data.title.substr(1) }}</td>
+            <td id="responsible">{{ data.responsible[0].toUpperCase() + data.responsible.substr(1) }}</td>
+            <td id="actions"><a href="{{ editor + '/' + data.id }}"><button class="btn btn-primary" type="button">Editar</button></a> | <button class="btn btn-danger" (click)="remove(data.id)" type="button">Excluir</button> | <button *ngIf="data.status == 'progress'" class="btn btn-warning" (click)="conclude(data.id)" type="button">Concluir</button></td>
+        </tr>
+        </tbody>
+    </table>  
+</section>

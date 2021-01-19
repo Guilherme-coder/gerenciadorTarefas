@@ -1,0 +1,55 @@
+<a href="tarefas/listar"><button type="button" class="btn btn-outline-primary btn-sm btn-block button_large">Listagem</button></a>
+
+<section class="form-task">
+  <h4 class="title_center">Cadastro de Tarefas</h4>
+  <hr>
+  <form [formGroup]="addForm" (submit)="add()">
+    <div class="row">
+      <label for="title" class="width_label">Título: </label>
+      <input formControlName="title" class="width_input" id="title" type="text">
+      <small *ngIf='addForm.get("title").errors?.required' class="text-danger d-block mt-2">Título é obrigatório!</small>
+    </div>
+
+    <br>
+    <div class="row">
+      <label for="description" class="description width_label">Descrição: </label>
+      <textarea formControlName="description" class="width_input" name="description" id="description" cols="50" rows="6"></textarea>
+      <small *ngIf='addForm.get("description").errors?.required' class="text-danger d-block mt-2">Descrição obrigatória!</small>
+    </div>
+
+    <br>
+
+    <div class="half_rows">
+      
+      <div class="half_row">
+      <label for="responsible" class="half_width_label">Responsável: </label>
+        <input formControlName="responsible" class="half_width_input" id="responsible" type="text">
+        <small *ngIf='addForm.get("responsible").errors?.required' class="text-danger d-block mt-2">O responsável é obrigatório!</small>
+      </div>
+
+      <div class="half_row">
+        <label for="priority" class="half_width_label">Prioridade: </label>
+        <select formControlName="priority" class="half_width_input" id="priority" name="priority">
+          <option value="low">Baixa</option>
+          <option value="middle">Média</option>
+          <option value="high">Alta</option>
+        </select>
+        <small *ngIf='addForm.get("priority").errors?.required' class="text-danger d-block mt-2">Definir prioridade é obrigatório!</small>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="row">
+      <label for="deadline" class="width_label">Deadline: </label>
+      <input formControlName="deadline" class="width_input" id="deadline" type="date">
+      <small *ngIf='addForm.get("deadline").errors?.required' class="text-danger d-block mt-2">Deadline é obrigatório!</small>
+    </div>
+
+    <br>
+    
+    <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+  </form>
+
+
+</section>
