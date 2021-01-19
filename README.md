@@ -11,3 +11,9 @@ Ou seja, uma conexão na porta 3306, com usuário root, senha vazia e o nome do 
 4. Após isso, é preciso instalar as depêndencias da api. No diretório raiz da api (api/) execute o comando npm i.
 5. Após instalar as dependências e com o servidor MySql iniciado execute o comando npm start na raiz da api (api/).
 6. Após esses dados, a api vai estar iniciada em conjunto com o servidor MySql.
+
+
+## Aplicação criada com Angular
+#### Como usar:
+1. Com a api e o servidor MySql rodando, vá até a pasta onde se encontra a raiz da aplicação (gerenciador-tarefas/)
+ e execute o comando ng serve -o
