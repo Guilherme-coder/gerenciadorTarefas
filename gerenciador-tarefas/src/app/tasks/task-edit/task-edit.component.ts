@@ -31,12 +31,7 @@ export class TaskEditComponent implements OnInit {
         this.datas = datas
         this.listData = this.datas
       })
-        
-        
-    
-
-
-
+      
     this.addForm = this.formBuilder.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
@@ -47,8 +42,6 @@ export class TaskEditComponent implements OnInit {
   }
 
   edit(){
-    
-
     const title = this.addForm.get('title').value.trim().toLowerCase();
     const description = this.addForm.get('description').value.trim().toLowerCase();
     const responsible = this.addForm.get('responsible').value.trim().toLowerCase();
@@ -60,10 +53,22 @@ export class TaskEditComponent implements OnInit {
     this.apiService
       .edit(this.userId, title, description, responsible, priority, status, deadline)
       .subscribe(
-        () => console.log("Edited Task"),
+        () => {
+          console.log("Edited Task")
+          this.clearForm()
+        },
         error => console.log(error)
       )
+  }
 
+  clearForm(){
+    this.addForm = this.formBuilder.group({
+      title: [''],
+      description: [''],
+      responsible: [''],
+      priority: [''],
+      deadline: ['']
+    });
   }
 
 

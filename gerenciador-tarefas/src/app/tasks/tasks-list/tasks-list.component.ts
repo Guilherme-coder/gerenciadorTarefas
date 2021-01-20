@@ -43,7 +43,7 @@ export class TasksListComponent implements OnInit {
     
     const tables = document.getElementsByClassName("tr_listed")
 
-    if(id != 0){
+    if(id){
       for(let i = 0 ; i < tables.length ; i++){
         tables[i].classList.add("inactive")
         if(tables[i].querySelector("#id").textContent == id){
@@ -114,7 +114,7 @@ export class TasksListComponent implements OnInit {
     this.apiService
       .remove(id)
       .subscribe(
-        () => this.load(),
+        () => {this.load()},
         error => console.log(error)       
         
       )

@@ -35,9 +35,22 @@ export class TasksFormComponent implements OnInit {
     this.apiService
       .register(title, description, responsible, priority, status, deadline)
       .subscribe(
-        () => console.log("Task Added"),
+        () => {
+          console.log("Task Added")
+          this.clearForm()
+        },
         (error) => console.log(error)        
       )
+  }
+
+  clearForm(){
+    this.addForm = this.formBuilder.group({
+      title: [''],
+      description: [''],
+      responsible: [''],
+      priority: [''],
+      deadline: ['']
+    });
   }
 
   

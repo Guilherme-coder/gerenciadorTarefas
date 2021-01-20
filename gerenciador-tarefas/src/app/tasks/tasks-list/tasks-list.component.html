@@ -18,6 +18,7 @@
             <div class="half_row">
                 <label class="half_width_label" for="responsible">Responsável: </label>
                 <select class="half_width_input" formControlName="responsible" id="responsible" name="responsible">
+                    <option value=""></option>
                     <option *ngFor="let responsible of responsibles" [value]="responsible">{{ responsible[0].toUpperCase() + responsible.substr(1) }}</option>
                 </select>
             </div>
@@ -25,6 +26,7 @@
             <div class="half_row">
                 <label class="half_width_label" for="status">Situação: </label>
                 <select class="half_width_input" formControlName="status" id="status" name="statuts">
+                    <option value=""></option>
                     <option value="progress">Em andamento</option>
                     <option value="completed">Concluída</option>
                 </select>

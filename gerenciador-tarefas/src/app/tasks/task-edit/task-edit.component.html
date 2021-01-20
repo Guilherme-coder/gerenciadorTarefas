@@ -1,7 +1,7 @@
 <a href="tarefas/listar"><button type="button" class="btn btn-outline-primary btn-sm btn-block button_large">Listagem</button></a>
 
 <section class="form-task">
-  <h4 class="title_center">Cadastro de Tarefas</h4>
+  <h4 class="title_center">Edição de Tarefas</h4>
   <hr>
   <form *ngFor="let user of datas" [formGroup]="addForm" (submit)="edit()">
     <div class="row">
@@ -48,7 +48,7 @@
 
     <br>
     
-    <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+    <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary btn-block">Editar</button>
   </form>
 
 
