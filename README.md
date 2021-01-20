@@ -1,4 +1,7 @@
 ## API criada em node.js para persistir os dados da SPA Angular.
+#### O que foi usado na api:
+Na api eu utilizei o express para gerencias as requisições, nodemon para ter o live reloading da api, consign para carregar os controladores no express e mysql para mockar os dados recebidos pela api.
+
 #### Como usar:
 1. Supondo que você já tenha o node.js (https://nodejs.org/en/download/) e os MySql (https://www.apachefriends.org/download.html) instalados na sua máquina, é preciso ter as portas 3000 (para a API) e 3306 (para o DB MySql) sem uso.
 2. É preciso subir o servidor MySql na porta 3306.
@@ -14,6 +17,9 @@ Ou seja, uma conexão na porta 3306, com usuário root, senha vazia e o nome do 
 
 
 ## Aplicação criada com Angular
+#### O que foi usado na spa:
+Foi utilizado diversar bibliotécas para controle de formulários, gerenciamento de requisições http, bootstrap para as estilizações, roteamento...
+
 #### Como usar:
 1. Caso não tenha o Angular CLI na sua máquina use o comando __npm install -g @angular/cli__.
 2. Com a api e o servidor MySql rodando, vá até a pasta onde se encontra a raiz da aplicação (gerenciador-tarefas/)
